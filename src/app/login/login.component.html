@@ -1,0 +1,63 @@
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark  ">
+      <div class="container" style="background-color: rgb(11, 14, 63);">
+        <a class="navbar-brand" href="#">ABC Bank</a> 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  mb-2 mb-lg-0  ms-auto  ">
+            <li class="nav-item pe-2">
+              <a class="nav-link active" aria-current="page" href="#">HOME</a>
+            </li>
+            <li class="nav-item pe-2 ">
+              <a class="nav-link active" aria-current="page" href="#">ABOUT</a>
+            </li>
+    
+            <li class="nav-item pe-2 ">
+              <a class="nav-link active" aria-current="page" href="#">FORMS</a>
+            </li>
+            <li class="nav-item pe-2 ">
+              <a class="nav-link active" aria-current="page" href="#">NET BANKING BRANCHES</a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </nav>
+    
+    <div class="container">
+    <div class="row" >
+      <div class="col-4">
+    
+    <div class="row">
+    </div>
+    
+      </div><div class="col-4"></div>
+      <div class="col-4" style="margin-top: 30px;" >
+     <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <table class="table tab">
+              <tr><td colspan="2" class="pt-3"> <h3  style="font-family:'Brush Script MT', cursive; text-align: center; font-size: 50px;">ABC Bank</h3></td></tr>
+              <tr><td class="pt-5">Account Number</td>
+              <td class="pt-5"><input type="text" id="acno"  name="acno"formControlName="acno"
+                placeholder="Account Number"></td>
+                <div  *ngIf ="( this.loginForm.get('acno')?.dirty || this.loginForm.get('acno')?.touched) && (this.loginForm.get('acno')?.errors)" style="color: red;">Invalid Account number</div></tr>
+              <tr><td class="pt-5">Password</td><td class="pt-5">
+                <input type="password" id="pwd" formControlName="pwd" name="pwd"
+                placeholder="Password" ></td>
+                <div  *ngIf ="( this.loginForm.get('pwd')?.dirty || this.loginForm.get('pwd')?.touched) && (this.loginForm.get('pwd')?.errors)" style="color: red;">Invalid Password</div></tr>
+              <tr><td class="pt-5"colspan="2" align="center"><button type="button " 
+                  style="background-color: rgb(11, 14, 63); color: beige; width: 80px;border: 0ch;font-family:'monotype corsiva';" 
+                  (click)="login()">Login</button>
+                <a routerLink="register" >Register</a>
+                </td></tr>
+          </table></form>
+          </div>
+          </div>
+      </div>
+    
+    </body>

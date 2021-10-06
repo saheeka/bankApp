@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row mt-5"  >
+        <div class="col-4"></div>
+        <div class="col-4">
+    <h1>Transaction History</h1>
+<table>
+    <thead><tr>
+        <th>Amount</th>
+        <th>Type</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let t of transactions">
+        <td> {{t.amount}} </td>
+        <td>{{t.type}}</td>
+    </tr>
+</tbody>
+</table></div>
+<div class="col-4"></div>
+</div></div>

@@ -1,0 +1,85 @@
+
+<div class="container">
+    <h1>Welcome {{user}} !!!</h1>
+    <br>
+    <a routerLink="/transaction">Transaction History</a><br><br>
+    <p>Login Details  (Unformated) : {{dLogin}}</p>
+    <p>Login Details  (Formated) : {{dLogin | date}}</p>
+    <p>Login Details  (Formated) : {{dLogin | date:'short'}}</p>
+    <app-animation></app-animation>
+<div class="row" >
+
+    <div class="col-3"></div>
+    <div  [ngClass]="acno? 'apply':'' " class="col-6 mt-5 mb-2" style="border: 1px solid black;">
+       
+        <div><h1 style="margin-left: 200px;">Deposit</h1></div>
+        <form (ngSubmit)="deposit()">
+        <div class="mb-3" >
+            <input type="text" id="acno"  name="acno"placeholder="Enter Account number " class="form-control"
+             [(ngModel)]="acno" >
+            </div>
+            <div class="mb-3">
+            <input type="text" id="pwd" name="pwd" placeholder="Enter password"  class="form-control"
+            [(ngModel)]="pwd" >
+            </div>
+            <div class="mb-3">
+            <input type="text" id="amt"  name="amt"placeholder="Amount" class="form-control"
+            [(ngModel)]="amt" >
+            </div>
+            
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <button  type="submit" class=" btn  ms-4 btn-primary"  > Deposit</button>
+                   
+                </div>
+                <div class="col-4"></div>
+            </div> </form> 
+</div>
+</div>
+
+<div class="row">
+
+    <div class="col-3"></div>
+    <div class="col-6 mt-2 mb-5" style="border: 1px solid black;">
+       
+        <div><h1 appHighlights style="margin-left: 200px;">Withdraw</h1></div>
+        <form (ngSubmit)="withdraw()">
+        <div class="mb-3" >
+            <input type="text" id="wacno" name="wacno" placeholder="Enter Account number " class="form-control"
+            [(ngModel)]="wacno" >
+            </div>
+            <div class="mb-3">
+            <input type="text" id="wpwd" name="wpwd" placeholder="Enter password"  class="form-control"
+            [(ngModel)]="wpwd" >
+            </div>
+            <div class="mb-3">
+            <input type="text" id="wamt" name="wamt" placeholder="Amount" class="form-control"
+            [(ngModel)]="wamt">
+            </div>
+            
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <button type="submit" class="btn  ms-4 btn-primary" > Withdraw</button>
+                   
+                </div>
+            
+                <div class="col-4"></div>
+
+            </div></form>
+          
+</div>
+</div>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 ">
+        <app-delete-confirmation (onCancel)="onCancel()" (onDelete)="onDelete($event)" [item]="accno"></app-delete-confirmation>
+        <button type="submit" class="btn btn-danger" style="margin-left:100px" 
+        (click)="deleteParent()"> Delete Account</button> 
+        <br><br><button class="btn btn-danger" (click)="logout()">Logout</button>
+    </div>
+    <div class="col-4"></div>
+</div>
+
+</div>

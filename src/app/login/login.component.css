@@ -1,0 +1,17 @@
+.tab {
+           
+    background-color: transparent;
+    height: 460px;
+    width: 450px;
+    font-size: 20px;
+    border-color: transparent;
+    border: 1px;      
+}
+
+body{
+     background-image: url(/assets/images/login.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+   
+}
